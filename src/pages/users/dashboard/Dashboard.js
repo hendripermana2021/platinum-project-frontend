@@ -19,8 +19,11 @@ const Dashboard = () => {
 
   useEffect(() => {
     decoder();
-    getAirport();
   });
+
+  useEffect(() => {
+    getAirport();
+  }, []);
 
   const decoder = () => {
     try {
