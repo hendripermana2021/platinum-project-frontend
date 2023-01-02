@@ -5,9 +5,9 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./services.css";
 
 // import images
-import s1 from "../../assets/landing/service 1.svg";
-import s2 from "../../assets/landing/service 2.svg";
-import s3 from "../../assets/landing/service 3.svg";
+import s1 from "../../assets/landing/service 1.png";
+import s2 from "../../assets/landing/service 2.png";
+import s3 from "../../assets/landing/Frame 5.png";
 const Service = () => {
   return (
     <div>

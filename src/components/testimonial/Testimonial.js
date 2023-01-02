@@ -4,8 +4,8 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 
 // import images
-import girl from "../../assets/landing/Group 1342.svg";
-import person from "../../assets/landing/Group 1345.svg";
+import girl from "../../assets/landing/Group 1342.png";
+import person from "../../assets/landing/Group 1345.png";
 
 import "./testimonial.css";
 const Testimonial = () => {
