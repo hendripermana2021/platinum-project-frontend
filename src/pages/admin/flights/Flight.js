@@ -76,6 +76,7 @@ const Flight = () => {
       setShow(true);
     }
   };
+  console.log(flights)
   return (
     <div className="home">
       <Sidebar />
@@ -127,7 +128,8 @@ const Flight = () => {
                       <p className="flightInformation text-muted">
                         Departure Information
                       </p>
-                      <div className="list-flight">
+                      {
+                        data.DepartureTerminal === null ? "":(<div className="list-flight">
                         <p>
                           Terminal Name : <b>{data.DepartureTerminal.name}</b>
                         </p>
@@ -141,9 +143,12 @@ const Flight = () => {
                           Terminal Country :{" "}
                           <b>{data.DepartureTerminal.country}</b>
                         </p>
-                      </div>
+                      </div>)
+                      }
+                      
                       <hr />{" "}
-                      <div className="list-flight">
+                      {
+                        data.ArrivalTerminal === null ? "":(<div className="list-flight">
                         <p className="flightInformation text-muted">
                           Arrival Information
                         </p>
@@ -160,7 +165,9 @@ const Flight = () => {
                           Terminal Country :{" "}
                           <b>{data.ArrivalTerminal.country}</b>
                         </p>
-                      </div>
+                      </div>)
+                      }
+                      
                       <div className="row">
                         <div className="col-md-6 d-grid">
                           <button

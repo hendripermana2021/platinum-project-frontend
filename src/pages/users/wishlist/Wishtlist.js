@@ -85,6 +85,7 @@ const Wishtlist = () => {
     setShow(false);
     setErr("");
   };
+
   return (
     <div>
       <Navbar />
@@ -109,7 +110,7 @@ const Wishtlist = () => {
                         <div className="col-md-12">
                           <p>
                             Destination :
-                            {data.ticketDeparture.flight === null ? (
+                            {data.ticketDeparture === null  ? (
                               ""
                             ) : (
                               <b>
@@ -124,7 +125,7 @@ const Wishtlist = () => {
                           </p>
                           <p>
                             Date :
-                            {data.ticketDeparture.flight === null ? (
+                            {data.ticketDeparture === null ? (
                               ""
                             ) : (
                               <b>
@@ -139,7 +140,7 @@ const Wishtlist = () => {
                           <p>
                             Price :
                             <b>
-                              {" " +
+                              { data.ticketDeparture === null ? "": " " +
                                 formatter.format(data.ticketDeparture.price)}
                             </b>
                           </p>
