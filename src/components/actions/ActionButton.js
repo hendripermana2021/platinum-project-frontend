@@ -164,7 +164,7 @@ const Two = (props) => {
     props.nextStep();
     // props.userCallback(info2);
   };
-
+  console.log(bookingData.flightData);
   let passCounter = 1;
   return (
     <div className="container booking">
@@ -220,9 +220,11 @@ const Two = (props) => {
                     id="departureDate"
                     className="form-control text-center"
                     value={
-                      bookingData.flightData.secondTicket.departureAirport +
-                      " - " +
-                      bookingData.flightData.secondTicket.arrivalAirport
+                      bookingData.flightData === ""
+                        ? ""
+                        : bookingData.flightData.secondTicket.departureAirport +
+                          " - " +
+                          bookingData.flightData.secondTicket.arrivalAirport
                     }
                     disabled
                   />
@@ -230,18 +232,23 @@ const Two = (props) => {
               ) : (
                 ""
               )}
-              <div className="col-md-6">
-                <label htmlFor="departure" className="form-label">
-                  Class Seat
-                </label>
-                <input
-                  type="text"
-                  id="departureDate"
-                  className="form-control text-center"
-                  value={bookingData.flightData.class}
-                  disabled
-                />
-              </div>
+              {bookingData.secondTicket.ticket_id !== "" ? (
+                ""
+              ) : (
+                <div className="col-md-6">
+                  <label htmlFor="departure" className="form-label">
+                    Class Seat
+                  </label>
+                  <input
+                    type="text"
+                    id="departureDate"
+                    className="form-control text-center"
+                    value={bookingData.flightData.class}
+                    disabled
+                  />
+                </div>
+              )}
+
               <div className="col-md-6">
                 <label htmlFor="departure" className="form-label">
                   Departure Date - Departure Time{" "}
@@ -411,6 +418,7 @@ const Three = (props) => {
     currency: "IDR",
   });
   let passCounter = 1;
+
   return (
     <div className="container booking">
       <div className="row row-cols-md-12 row-cols-1 d-flex justify-content-center align-items-center hero mb-5">

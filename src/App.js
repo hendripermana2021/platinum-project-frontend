@@ -45,7 +45,7 @@ const App = () => {
   const changeNotifHandler = async () => {
     const isRead = sessionStorage.getItem("isRead");
     const accessToken = sessionStorage.getItem("accessToken");
-    console.log({ isRead, type: typeof isRead });
+
     if (isRead !== null) {
       if (isRead === "true") {
         try {
